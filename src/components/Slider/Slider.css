@@ -1,0 +1,21 @@
+.Slider {
+  position: relative;
+  display: block;
+  width: 70%;
+  height: 70%;
+  border-radius: 5px;
+  border: 2px solid #CCC;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  overflow: hidden;
+}
+
+/*.Slider {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  height: 70%;
+  border-radius: 5px;
+  border: 2px solid #CCC;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  overflow: hidden;
+}*/
