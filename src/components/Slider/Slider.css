@@ -9,6 +9,14 @@
   overflow: hidden;
 }
 
+.SliderIndicatorContainer{
+  position: relative;
+  bottom: 40px;
+  display: flex;
+  width: 70%;
+  justify-content: center;
+}
+
 /*.Slider {
   display: flex;
   justify-content: space-around;

@@ -2,4 +2,11 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    width: 20%;
+}
+
+@media (max-width: 499px){
+    .IndicatorItems{
+        width: 40%;
+    }
 }

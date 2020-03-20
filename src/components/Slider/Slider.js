@@ -55,7 +55,7 @@ const Slider = (props) => {
                 <NavButton position='Left' click={previous} />
                 <NavButton position='Right' click={next} />
             </div>
-            <div style={{ position: 'relative', bottom: 40 }}>
+            <div className='SliderIndicatorContainer'>
                 <IndicatorItems  itemCount={photoItems.length} index={index} />
             </div>
         </Aux>
