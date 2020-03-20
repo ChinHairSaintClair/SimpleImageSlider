@@ -1,0 +1,11 @@
+.IndicatorItem{
+    width: 8px;
+    height: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.Active{
+    box-shadow: 2px 8px 8px inset black;
+}

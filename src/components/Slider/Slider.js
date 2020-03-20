@@ -3,6 +3,8 @@ import axios from 'axios';
 import './Slider.css';
 import SliderContent from '../SliderContent/SliderContent';
 import NavButton from '../NavButton/NavButton';
+import IndicatorItems from '../IndicatorItems/IndicatorItems';
+import Aux from '../../hoc/Aux/Aux';
 
 const Slider = (props) => {
     const [photoItems, setPhotoItems] = useState([]);
@@ -27,7 +29,7 @@ const Slider = (props) => {
 
     const previous = () => {
         let idx = index - 1;
-        if (idx <= 0) {
+        if (idx < 0) {
             idx = (photoItems.length - 1);
         }
 
@@ -47,11 +49,16 @@ const Slider = (props) => {
     //const item = curPhotoItem != null ? <img key={curPhotoItem.id} src={curPhotoItem.url} alt={curPhotoItem.title} /> : <p>Loading...</p>;
 
     return (
-        <div className='Slider'>
-            <SliderContent items={photoItems} index={index}/>
-            <NavButton position='Left' click={previous} />
-            <NavButton position='Right' click={next} />
-        </div>
+        <Aux>
+            <div className='Slider'>
+                <SliderContent items={photoItems} index={index} />
+                <NavButton position='Left' click={previous} />
+                <NavButton position='Right' click={next} />
+            </div>
+            <div style={{ position: 'relative', bottom: 40 }}>
+                <IndicatorItems  itemCount={photoItems.length} index={index} />
+            </div>
+        </Aux>
     );
 }
 
