@@ -9,17 +9,16 @@ import Aux from '../../hoc/Aux/Aux';
 const Slider = (props) => {
     const [photoItems, setPhotoItems] = useState([]);
     const [index, setIndex] = useState(0);
+    const [hasError, setHasError] = useState(false);
 
     const getPhotoData = () => {
         axios.get('https://jsonplaceholder.typicode.com/photos').then(response => {
-            console.log(response);
             const photoEntries = response.data.slice(0, 5);
-            console.log(photoEntries);
-
             setPhotoItems(photoEntries);
+            setHasError(false);
         })
             .catch(error => {
-                console.log("Oh no");
+                setHasError(true);
             });
     }
 
@@ -45,8 +44,7 @@ const Slider = (props) => {
         setIndex(idx);
     }
 
-    //const curPhotoItem = photoItems[index];
-    //const item = curPhotoItem != null ? <img key={curPhotoItem.id} src={curPhotoItem.url} alt={curPhotoItem.title} /> : <p>Loading...</p>;
+    const error = hasError ? <div className='SliderError'><button onClick={getPhotoData}>Error retreiving data, try again?</button></div> : null;
 
     return (
         <Aux>
@@ -54,6 +52,7 @@ const Slider = (props) => {
                 <SliderContent items={photoItems} index={index} />
                 <NavButton position='Left' click={previous} />
                 <NavButton position='Right' click={next} />
+                {error}
             </div>
             <div className='SliderIndicatorContainer'>
                 <IndicatorItems  itemCount={photoItems.length} index={index} />

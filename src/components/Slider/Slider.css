@@ -9,6 +9,13 @@
   overflow: hidden;
 }
 
+.SliderError{
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .SliderIndicatorContainer{
   position: relative;
   bottom: 40px;
